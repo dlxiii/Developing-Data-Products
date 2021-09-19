@@ -1,33 +1,39 @@
-#
-# This is the user-interface definition of a Shiny web application. You can
-# run the application by clicking 'Run App' above.
-#
-# Find out more about building applications with Shiny here:
-#
-#    http://shiny.rstudio.com/
-#
+library(highcharter)
 
-library(shiny)
-
-# Define UI for application that draws a histogram
-shinyUI(fluidPage(
-
-    # Application title
-    titlePanel("Old Faithful Geyser Data"),
-
-    # Sidebar with a slider input for number of bins
-    sidebarLayout(
-        sidebarPanel(
-            sliderInput("bins",
-                        "Number of bins:",
-                        min = 1,
-                        max = 50,
-                        value = 30)
-        ),
-
-        # Show a plot of the generated distribution
-        mainPanel(
-            plotOutput("distPlot")
-        )
-    )
+shinyUI(navbarPage(
+    "Fertility Forecast Dashboards",
+    tabPanel("FERTILITY FORECAST",
+             fluidPage(
+                 sidebarLayout(
+                     sidebarPanel(
+                         dateRangeInput(
+                             "date_range",
+                             label = "Date Range",
+                             min = "1960-01-01",
+                             max = "2012-12-01",
+                             start = "1960-06-06",
+                             end = "2012-01-01",
+                             format = "yyyy-mm-dd",
+                             startview = "decade"
+                         ),
+                         sliderInput(
+                             "forecast_n_months",
+                             min = 12,
+                             max = 12 * 5,
+                             value = 48,
+                             step = 12,
+                             label = "Forecast n months"
+                         )
+                     ),
+                     mainPanel(highchartOutput("forecastPlot"))
+                 )
+             )),
+    navbarMenu(
+        "HELP",
+        tabPanel("Instructions",
+                 fluidPage(
+                     includeMarkdown("instructions.md")
+                 ))
+    ),
+    collapsible = TRUE
 ))
