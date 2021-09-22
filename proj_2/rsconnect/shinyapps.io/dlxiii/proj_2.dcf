@@ -5,9 +5,10 @@ account: dlxiii
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 4685964
-bundleId: 5049547
+bundleId: 5049562
 url: https://dlxiii.shinyapps.io/proj_2/
-when: 1632082561.89814
-lastSyncTime: 1632082561.89816
+when: 1632082933.17892
+lastSyncTime: 1632082933.17894
 asMultiple: FALSE
 asStatic: FALSE
+ignoredFiles: instructions.html
