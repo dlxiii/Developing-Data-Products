@@ -1,0 +1,13 @@
+name: myfirstapp
+title: myfirstapp
+username:
+account: dlxiii
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 4707314
+bundleId: 5060473
+url: https://dlxiii.shinyapps.io/myfirstapp/
+when: 1632321970.30009
+lastSyncTime: 1632321970.30011
+asMultiple: FALSE
+asStatic: FALSE
